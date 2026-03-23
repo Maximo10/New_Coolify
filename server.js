@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 async function main() {
-    const DB_URI = process.env.MONGO_URI || "mongodb://localhost:27017/mydatabase";
+    const DB_URI = process.env.MONGO_URI || "mongodb://bferfer@aulaestudio.es:Pegaso107@dokploypro-basedatos-x8ukm0:27017";
     try{
         await mongoose.connect(DB_URI);
         console.log("Conexion a la base de datos exitosa");
