@@ -32,7 +32,7 @@ async function main() {
         }
 
         app.get("/",async (req, res) => {
-            res.json({message: "Api con Webhook funcionando correctamente"});
+            res.json({message: "Api con Webhook Funcionando Correctamente"});
         });
 
         //emdpoint Usuarios 
