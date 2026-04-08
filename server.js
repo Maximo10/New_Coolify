@@ -8,8 +8,8 @@ const app = express();
 app.use(express.json());
 
 async function main() {
+    const DB_URI = process.env.MONGO_URI || "mongodb://localhost:27017/mydatabase";
     try{
-        const DB_URI = process.env.MONGO_URI || "mongodb://localhost:27017/mydatabase";
         await mongoose.connect(DB_URI);
         console.log("Conexion a la base de datos exitosa");
 
@@ -33,7 +33,7 @@ async function main() {
         }
 
         app.get("/",async (req, res) => {
-            res.json({message: "Api con Webhook funcionando correctamente"});
+            res.json({message: "Api/Webhook2 funcionando correctamente"});
         });
 
         //emdpoint Usuarios 
@@ -75,8 +75,7 @@ async function main() {
             } catch (error) {
                 res.status(400).json({ message: error.message });
             }
-        });
-
+        });                
         //endpoint Grupos
         app.get("/grupos", async (req, res) => {
             const grupos = await grupo.find();
